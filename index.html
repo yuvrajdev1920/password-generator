@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Generator</title>
+    <link rel="stylesheet" href="main.css">
+</head>
+<body>
+    <div class="wrapper bg-black text-white w-full h-screen flex flex-col justify-center items-center">
+        <div class="parent w-1/5">
+            <div class="display-alert bg-purple-600 rounded-md text-sm text-center p-2 scale-0 
+            transition-all duration-200">At least one checkbox should be checked!</div>
+            <h1 class="text-center font-thin text-2xl my-2">Password Generator</h1>
+            <div class="generator-card bg-white/30 border rounded-md p-8 space-y-2">
+                <div class="length flex justify-between">
+                    <h3>Length</h3>
+                    <h3 class="length-numeric">8</h3>
+                </div>
+                <div class="length-slider">
+                    <input type="range" min="1" max="20" value="8" step="1" class="slider w-full accent-purple-600 outline-none" id="myRange">
+                </div>
+                <div class="char-choices">
+                    <input type="checkbox" name="number" id="number" value="number" class="accent-purple-600">
+                    <label for="number">Numbers <span class="text-slate-900 text-xs">(0-9)</span></label><br>
+
+                    <input type="checkbox" name="lowercase" id="lowercase" value="lowercase" class="accent-purple-600" checked>
+                    <label for="lowercase">Lowercase Letters <span class="text-slate-900 text-xs">(a-z)</span></label><br>
+
+                    <input type="checkbox" name="uppercase" id="uppercase" value="uppercase" class="accent-purple-600" checked>
+                    <label for="uppercase">Uppercase Letters <span class="text-slate-900 text-xs">(A-Z)</span></label><br>
+                    
+                    <input type="checkbox" name="spl-char" id="spl-char" value="spl-char" class="accent-purple-600">
+                    <label for="spl-char">Special Characters <span class="text-slate-900 text-xs">(!#$%&@...)</span></label>
+                </div>
+                <div class="strength-indicator flex justify-between items-center">
+                    <h3>Strength</h3>
+                    <div class="indicator bg-yellow-500 w-4 h-4 rounded-full drop-shadow-[0_0_5px_rgba(234,179,8,1)]"></div>
+                </div>
+                <button class="generate-btn text-center bg-purple-600 w-full rounded-sm p-1 text-sm">Generate</button>
+                
+            </div>
+            <div class="display-password-parent">
+                <div class="display-password flex justify-between items-center px-4 py-8">
+                    <input readonly placeholder="Password" class="display-pwd bg-white/10 rounded-sm w-10/12">
+                    <button class="copy-btn relative">
+                        <div class="copy-msg bg-white/10 rounded-xl text-xs absolute p-1 bottom-6 right-[-1rem] scale-0 
+                        transition-all duration-200">Copied!</div>
+                        <i class="fa-solid fa-copy text-purple-600"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <footer class="text-sm">Developed with <i class="fa-solid fa-heart text-purple-600"></i> by 
+            <a class="text-purple-600 underline decoration-dotted" href="https://github.com/yuvrajdev1920">Yuvraj Pratap Singh</a>.</footer>
+    </div>
+
+    <script src="https://kit.fontawesome.com/2a86404475.js" crossorigin="anonymous"></script>
+    <script src="app.js"></script>
+</body>
+</html>
